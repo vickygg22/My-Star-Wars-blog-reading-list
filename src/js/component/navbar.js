@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="flex-row navbar navbar-light bg-light mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<img className="starWarsLogo" src="https://www.freepnglogos.com/uploads/star-wars-logo-31.png" />
 			</Link>
 			<div className="ml-auto">
 				<Link to="/demo">

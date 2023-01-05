@@ -1,0 +1,22 @@
+.card{
+    width: 18rem;
+    margin-right: 30px;
+}
+.card-text1{
+    margin-top: -10px;
+}
+.imgSize{
+    width: 288px;
+    height: 200px;
+    margin-left: -13px;
+}
+.starWarsLogo{
+    width: 90px;
+    height: 90px;
+    margin-left: 80px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+.scrolling{
+    overflow-x: scroll;
+}
