@@ -1,7 +1,6 @@
 import React from "react";
 
 const SingleCharacter = (props) => {
-    console.log(props.character)
     return (
         <div className="card">
             <img className="card-img-top imgSize" src="https://via.placeholder.com/400x200" alt="Card image cap" />
