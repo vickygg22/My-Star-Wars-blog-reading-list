@@ -9,7 +9,7 @@ const SinglePlanet = (props) => {
                 <h5 className="card-title">{props.planet.name}</h5>
                 <p className="card-text">Population:</p>
                 <p className="card-text1">Terrain:</p>
-                <Link to="/demo">
+                <Link to={`/planets/${props.planet.uid}`}>
 					<button className="btn btn-outline-primary">Learn more!</button>
 				</Link>
                 <a href="#" className="btn btn-outline-warning float-end"><i className="fas fa-regular fa-heart"></i></a>

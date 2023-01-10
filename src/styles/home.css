@@ -33,16 +33,36 @@
     text-align: center;
     padding: 20px;
 }
-ul > li {
-    display: inline;
-    padding: 50px;
+.sectionOfDetails {
+    display: inline-block;
+    padding: 20px 50px 0px 50px;
     margin-top: 20px;
     color: #fd5c63;
     font-weight: 600;
 }
-ul{
+/* .firstUl{
     margin-top: 40px;
     border-top: 1px solid #fd5c63;
     padding: 30px;
 
+}
+.secondUl > li{
+    display: inline;
+    padding: 50px;
+    color: #fd5c63;
+    font-weight: 600;
+}
+.secondUl{
+    padding-left: 30px;
+} */
+ul {
+    list-style-type: none;
+}
+ul > li {
+    margin-left: -30px;
+    margin-top: 10px;
+}
+.setOfDetails{
+    border-top: 1px solid #fd5c63;
+    margin-top: 40px;
 }

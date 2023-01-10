@@ -9,7 +9,7 @@ const SingleVehicle = (props) => {
                 <h5 className="card-title">{props.vehicle.name}</h5>
                 <p className="card-text">Model:</p>
                 <p className="card-text1">Passengers:</p>
-                <Link to="/demo">
+                <Link to={`/vehicles/${props.vehicle.uid}`}>
 					<button className="btn btn-outline-primary">Learn more!</button>
 				</Link>
                 <a href="#" className="btn btn-outline-warning float-end"><i className="fas fa-regular fa-heart"></i></a>
