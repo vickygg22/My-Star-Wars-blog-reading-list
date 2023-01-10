@@ -20,3 +20,29 @@
 .scrolling{
     overflow-x: scroll;
 }
+.detailImg{
+    width: 450px;
+
+}
+.detailMainDiv{
+    display: flex;
+}
+
+.detailText{
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+ul > li {
+    display: inline;
+    padding: 50px;
+    margin-top: 20px;
+    color: #fd5c63;
+    font-weight: 600;
+}
+ul{
+    margin-top: 40px;
+    border-top: 1px solid #fd5c63;
+    padding: 30px;
+
+}
