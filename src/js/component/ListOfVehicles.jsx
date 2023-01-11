@@ -3,6 +3,8 @@ import SingleVehicle from "./SingleVehicle.jsx";
 
 const ListOfVehicles = () => {
     const [vehicles, setVehicles] = useState([])
+
+
      useEffect(() => {
          fetch("https://www.swapi.tech/api/vehicles/")
      .then(res => res.json())
@@ -11,11 +13,12 @@ const ListOfVehicles = () => {
      })
      .catch(err => console.error(err))
      }, [])
+
     return (
         <div>
             <h2 className="text-danger mt-5 mb-4">Vehicles</h2>
             <div className="row flex-nowrap scrolling">
-            {vehicles.map((vehicle, index) => {return <SingleVehicle vehicle={vehicle} key={index}/>})}
+            {vehicles.map((vehicle, index) => {return <SingleVehicle url={vehicle.url} vehicle={vehicle} key={index}/>})}
             </div>
         </div>
     )

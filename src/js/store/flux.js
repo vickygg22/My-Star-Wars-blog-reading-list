@@ -12,9 +12,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			favorites: []
 		},
 		actions: {
+			addFavorites: (name) => {
+				const store = getStore();
+				if(store.favorites.includes(name)){
+					return;
+				} else {
+					setStore({favorites: [...store.favorites, name]})
+				}
+			},
 			// Use getActions to call a function within a function
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -24,6 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

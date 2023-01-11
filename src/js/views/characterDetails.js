@@ -5,7 +5,8 @@ const CharacterDetails = () => {
     const [details, setDetails] = useState([])
     const { id } = useParams()
     const location = useLocation()
-    console.log(location)
+
+    
     useEffect(() => {
         fetch(`https://www.swapi.tech/api${location.pathname}`)
         .then(res => res.json())

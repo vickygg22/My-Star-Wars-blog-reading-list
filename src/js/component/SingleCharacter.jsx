@@ -1,16 +1,32 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 
 const SingleCharacter = (props) => {
-    console.log(props.properties)
+    const [url, setUrl] = useState(props.url)
+
+    const [property, setProperty] = useState([])
+
+    const getCharts = async () => {
+        await fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            setProperty(data.result.properties)
+            console.log(property)
+        })
+    }
+
+    useEffect(() => {
+        getCharts()
+    }, [url])
+    
     return (
-        <div className="card">
+            <div className="card">
             <img className="card-img-top imgSize" src="https://via.placeholder.com/400x200" alt="Card image cap" />
             <div className="card-body">
-                <h5 className="card-title">{props.character.name}</h5>
-                <p className="card-text">Gender: </p>
-                <p className="card-text1">Hair Color: </p>
-                <p className="card-text1">Eye-Color: </p>
+                <h5 className="card-title">{property.name}</h5>
+                <p className="card-text">Gender: {property.gender}</p>
+                <p className="card-text1">Hair Color: {property.hair_color}</p>
+                <p className="card-text1">Eye-Color: {property.eye_color}</p>
                 <Link to={`/people/${props.character.uid}`}>
 					<button className="btn btn-outline-primary">Learn more!</button>
 				</Link>
