@@ -5,9 +5,16 @@ const FavoritesDropdown = () => {
     const { store, actions } = useContext(Context)
     const [count, setCount] = useState([])
 
+    // const handleDeleteClick = () => {
+    //     actions.deleteFavorites();
+    //     console.log("removing fav function worked")
+    // }
+
     const dropdownFav = store.favorites.map((favorite, i) => {
         return (
-            <a className="dropdown-item" href="#">{favorite}<i class="fas fa-solid fa-trash"></i></a>
+            <span className="dropdown-item" key={i} href="#" >
+                {favorite}<i className="fas fa-solid fa-trash" onClick={() => {actions.deleteFavorites(i); console.log(i)}}></i>
+            </span>
         )
     })
 
@@ -26,7 +33,7 @@ return store.favorites.length === 0 ? (
         Favorites <div className="numberOfFavs">{store.favorites.length}</div>
     </button>
     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a className="dropdown-item" href="#">{dropdownFav}</a>
+        {dropdownFav}
     </div>
 </div>
 )

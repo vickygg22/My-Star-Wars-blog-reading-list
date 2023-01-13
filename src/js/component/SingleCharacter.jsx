@@ -1,17 +1,19 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext.js";
 
 const SingleCharacter = (props) => {
     const [url, setUrl] = useState(props.url)
 
     const [property, setProperty] = useState([])
 
+    const { store, actions } = useContext(Context)
+
     const getCharts = async () => {
         await fetch(url)
         .then(res => res.json())
         .then(data => {
             setProperty(data.result.properties)
-            console.log(property)
         })
     }
 
@@ -19,6 +21,11 @@ const SingleCharacter = (props) => {
         getCharts()
     }, [url])
     
+    const handleFavoritesClick = () => {
+        actions.addFavorites(property.name);
+        console.log("adding fav function worked")
+    }
+
     return (
             <div className="card">
             <img className="card-img-top imgSize" src="https://via.placeholder.com/400x200" alt="Card image cap" />
@@ -30,7 +37,7 @@ const SingleCharacter = (props) => {
                 <Link to={`/people/${props.character.uid}`}>
 					<button className="btn btn-outline-primary">Learn more!</button>
 				</Link>
-                <a href="#" className="btn btn-outline-warning float-end"><i className="fas fa-regular fa-heart"></i></a>
+                <a href="#" className="btn btn-outline-warning float-end" onClick={handleFavoritesClick}><i className="fas fa-regular fa-heart"></i></a>
             </div>
         </div>
     )
