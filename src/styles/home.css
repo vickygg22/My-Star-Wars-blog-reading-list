@@ -20,3 +20,65 @@
 .scrolling{
     overflow-x: scroll;
 }
+.detailImg{
+    width: 450px;
+
+}
+.detailMainDiv{
+    display: flex;
+}
+
+.detailText{
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+.sectionOfDetails {
+    display: inline-block;
+    padding: 20px 50px 0px 50px;
+    margin-top: 20px;
+    color: #fd5c63;
+    font-weight: 600;
+}
+/* .firstUl{
+    margin-top: 40px;
+    border-top: 1px solid #fd5c63;
+    padding: 30px;
+
+}
+.secondUl > li{
+    display: inline;
+    padding: 50px;
+    color: #fd5c63;
+    font-weight: 600;
+}
+.secondUl{
+    padding-left: 30px;
+} */
+ul {
+    list-style-type: none;
+}
+ul > li {
+    margin-left: -30px;
+    margin-top: 10px;
+}
+.setOfDetails{
+    border-top: 1px solid #fd5c63;
+    margin-top: 40px;
+}
+.favDropdown{
+    margin-right: 80px;
+}
+.favDropdown > button {
+    width: 130px;
+    display: flex;
+}
+.numberOfFavs{
+    background-color: gray;
+    width: 20px;
+    border-radius: 6px;
+    margin-left: 10px;
+}
+.fa-trash{
+    margin-left: 15px;
+}
